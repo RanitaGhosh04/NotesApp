@@ -34,7 +34,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (formData) => {
     try {
-      const res = await axios.post('http://localhost:5000/api/users/register', formData);
+      const res = await axios.post('https://notesapp-backend-ja6v.onrender.com/api/users/register', formData);
       return { success: true, data: res.data };
     } catch (error) {
       return { success: false, error: error.response?.data?.message || 'Registration failed' };
@@ -43,7 +43,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (formData) => {
     try {
-      const res = await axios.post('http://localhost:5000/api/users/login', formData);
+      const res = await axios.post('https://notesapp-backend-ja6v.onrender.com/api/users/login', formData);
       
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', JSON.stringify(res.data.user));

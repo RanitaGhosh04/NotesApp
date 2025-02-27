@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://notesapp-backend-ja6v.onrender.com/api';
 
 const instance = axios.create({
   baseURL: API_URL,

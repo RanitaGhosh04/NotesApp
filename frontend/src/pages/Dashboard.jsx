@@ -16,7 +16,7 @@ const Dashboard = () => {
   const fetchNotes = async () => {
     try {
       setLoading(true);
-      const res = await axios.get('http://localhost:5000/api/notes');
+      const res = await axios.get('https://notesapp-backend-ja6v.onrender.com/api/notes');
       setNotes(res.data);
       setError('');
     } catch (error) {
@@ -44,7 +44,7 @@ const Dashboard = () => {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this note?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/notes/${id}`);
+        await axios.delete(`https://notesapp-backend-ja6v.onrender.com/api/notes/${id}`);
         setNotes(notes.filter(note => note._id !== id));
       } catch (error) {
         setError('Failed to delete note. Please try again.');
@@ -57,11 +57,11 @@ const Dashboard = () => {
     try {
       if (currentNote) {
         
-        const res = await axios.put(`http://localhost:5000/api/notes/${currentNote._id}`, noteData);
+        const res = await axios.put(`https://notesapp-backend-ja6v.onrender.com/api/notes/${currentNote._id}`, noteData);
         setNotes(notes.map(note => note._id === currentNote._id ? res.data : note));
       } else {
        
-        const res = await axios.post('http://localhost:5000/api/notes', noteData);
+        const res = await axios.post('https://notesapp-backend-ja6v.onrender.com/api/notes', noteData);
         setNotes([...notes, res.data]);
       }
       setShowForm(false);
