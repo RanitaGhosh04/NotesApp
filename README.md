@@ -4,7 +4,7 @@ A full-stack web application for creating and managing personal notes, built wit
 
 ## Live Demo
 
-Access the live application: [Notes App](https://notesappfront-9adu.onrender.com/login)
+Access the live application: [Notes App](https://notesappfront-9adu.onrender.com)
 
 ## Features
 
